@@ -1,5 +1,9 @@
 import { Select, Button } from 'antd';
 export default function SearchBar(){
+    const formStyle = {
+        height: 45,
+        letterSpacing: 1
+    }
     const villes = [
         { value: 'Dakar', label: 'Dakar' },
         { value: 'Diourbel', label: 'Diourbel' },
@@ -36,11 +40,11 @@ export default function SearchBar(){
     ]
     return(
         <form className='searchForm'>
-            <Select style={{ height: 45 }} defaultValue="Location" options={[...villes]}/>
-            <Select style={{ height: 45 }} defaultValue="Type de propriétés" options={[...properties]}/>
-            <Select style={{ height: 45 }} defaultValue="Chambres" options={[...rooms]}/>
-            <Select style={{ height: 45 }} defaultValue="Statut" options={[...statuts]}/>
-            <Button style={{ height: 45 }} type="primary">Rechercher</Button>
+            <Select style={formStyle} defaultValue="Location" options={[...villes]}/>
+            <Select style={formStyle} defaultValue="Type de propriétés" options={[...properties]}/>
+            <Select style={formStyle} defaultValue="Chambres" options={[...rooms]}/>
+            <Select style={formStyle} defaultValue="Statut" options={[...statuts]}/>
+            <Button style={formStyle} type="primary">Rechercher</Button>
         </form>
     )
 }

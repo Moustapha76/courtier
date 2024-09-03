@@ -3,6 +3,12 @@ import React, { createContext } from "react";
 export const GlobalContext = createContext();
 
 export const GlobalProvider = ({ children }) => {
+  const propertiesType = [
+    { name:'Appartement' , value: 'appartement' },
+    { name: 'Chambre' , value: 'chambre' },
+    { name: 'Maison' , value: 'saison' },
+    { name: 'Chambre' , value: 'studio' } 
+  ];
   const products = [
     { id: 1, name: "Villa de luxe", price: "1000000", image: "../images/house-1.jpg", statut: 'A vendre', bed: 4, room: 1, location: 'Dakar', type: 'Maison' },
     { id: 2, name: "Chambre à louer", price: "60000", image: "../images/house-2.jpg", statut: 'A louer', bed: 1, room: 1, location: 'Dakar', type: 'Chambre' },
@@ -33,20 +39,18 @@ export const GlobalProvider = ({ children }) => {
     { id: 14, name: "Gorée", properties: 10,   image: "../images/villes/goree.jpg"},
   ],
   
-  societies = [
-    {id: 1, name:'', link: '',image: '../images/societies/'},
-    {id: 2, name:'', link: '',image: '../images/societies/'},
-    {id: 3, name:'', link: '',image: '../images/societies/'},
-    {id: 4, name:'', link: '',image: '../images/societies/'},
-    {id: 5, name:'', link: '',image: '../images/societies/'},
-    {id: 6, name:'', link: '',image: '../images/societies/'},
-    {id: 7, name:'', link: '',image: '../images/societies/'},
-    {id: 8, name:'', link: '',image: '../images/societies/'},
-    {id: 9, name:'', link: '',image: '../images/societies/'},
-    {id: 10, name:'', link: '',image: '../images/societies/'}
+  partenaires = [
+    {id: 1, name:'', link: '',image: '../images/partenaires/client-1.png'},
+    {id: 2, name:'', link: '',image: '../images/partenaires/client-2.webp'},
+    {id: 3, name:'', link: '',image: '../images/partenaires/client-3.webp'},
+    {id: 4, name:'', link: '',image: '../images/partenaires/client-4.webp'},
+    {id: 5, name:'', link: '',image: '../images/partenaires/client-5.webp'},
+    {id: 6, name:'', link: '',image: '../images/partenaires/client-6.webp'},
+    {id: 7, name:'', link: '',image: '../images/partenaires/client-7.webp'},
+    {id: 8, name:'', link: '',image: '../images/partenaires/client-8.webp'},
   ]
   return (
-    <GlobalContext.Provider value={{ products, cityproperties, societies }}>
+    <GlobalContext.Provider value={{ products, cityproperties, partenaires, propertiesType }}>
       {children}
     </GlobalContext.Provider>
   );
