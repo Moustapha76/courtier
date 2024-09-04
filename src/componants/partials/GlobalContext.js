@@ -4,22 +4,23 @@ export const GlobalContext = createContext();
 
 export const GlobalProvider = ({ children }) => {
   const propertiesType = [
-    { name:'Appartement' , value: 'appartement' },
-    { name: 'Chambre' , value: 'chambre' },
-    { name: 'Maison' , value: 'saison' },
-    { name: 'Chambre' , value: 'studio' } 
+    { name:'Appartement' , value: 'Appartement' },
+    { name: 'Chambre' , value: 'Chambre' },
+    { name: 'Maison' , value: 'Maison' },
+    { name: 'Studio' , value: 'Studio' }, 
+    { name: 'Bureau' , value: 'Bureau' } 
   ];
   const products = [
-    { id: 1, name: "Villa de luxe", price: "1000000", image: "../images/house-1.jpg", statut: 'A vendre', bed: 4, room: 1, location: 'Dakar', type: 'Maison' },
-    { id: 2, name: "Chambre à louer", price: "60000", image: "../images/house-2.jpg", statut: 'A louer', bed: 1, room: 1, location: 'Dakar', type: 'Chambre' },
-    { id: 3, name: "Appartement moderne", price: "3000000", image: "../images/house-3.jpg", statut: 'A louer', bed: 3, room: 1, location: 'Kaolack', type: 'Appartement' },
-    { id: 4, name: "Studio moderne", price: "1400000", image: "../images/house-4.jpg", statut: 'A vendre', bed: 5, room: 5, location: 'Fatick', type: 'Studio' },
-    { id: 5, name: "Bureau à vendre", price: "450000", image: "../images/house-5.jpg", statut: 'A vendre', bed: 7, room: 4, location: 'Kédougou', type: 'Bureau' },
-    { id: 6, name: "Maison de luxe", price: "5000000", image: "../images/house-6.jpg", statut: 'A vendre', bed: 2, room: 2, location: 'Kolda', type: 'Maison' },
-    { id: 7, name: "Maison moderne avec piscine", price: "20000000", image: "../images/house-7.jpg", statut: 'A louer', bed: 3, room: 2, location: 'Louga', type: 'Maison' },
-    { id: 8, name: "Appartement haut standing", price: "5000000", image: "../images/house-8.jpg", statut: 'A louer', bed: 2, room: 2, location: 'Thiès', type: 'Appartement' },
-    { id: 9, name: "Très bel appartement", price: "5500000", image: "../images/house-9.jpg", statut: 'A louer', bed: 5, room: 4, location: 'Tambacounda', type: 'Appartement' },
-    { id: 10, name: "Beau chambre à louer", price: "100000", image: "../images/house-10.jpg", statut: 'A louer', bed: 2, room: 1, location: 'Matam', type: 'Chambre' },
+    { id: 1, name: "Villa de luxe", price: 10000, image: "../images/house-1.jpg", statut: 'vente', bed: 4, room: 1, location: 'Dakar', type: 'Maison' },
+    { id: 2, name: "Chambre à louer", price: 60000, image: "../images/house-2.jpg", statut: 'location', bed: 1, room: 1, location: 'Dakar', type: 'Chambre' },
+    { id: 3, name: "Appartement moderne", price: 300000, image: "../images/house-3.jpg", statut: 'vente', bed: 3, room: 1, location: 'Kaolack', type: 'Appartement' },
+    { id: 4, name: "Studio moderne", price: 140000, image: "../images/house-4.jpg", statut: 'vente', bed: 5, room: 5, location: 'Fatick', type: 'Studio' },
+    { id: 5, name: "Bureau à vendre", price: 45000, image: "../images/house-5.jpg", statut: 'vente', bed: 7, room: 4, location: 'Kédougou', type: 'Bureau' },
+    { id: 6, name: "Maison de luxe", price: 500000, image: "../images/house-6.jpg", statut: 'vente', bed: 2, room: 2, location: 'Kolda', type: 'Maison' },
+    { id: 7, name: "Maison moderne avec piscine", price: 200000, image: "../images/house-7.jpg", statut: 'location', bed: 3, room: 2, location: 'Louga', type: 'Maison' },
+    { id: 8, name: "Appartement haut standing", price: 500000, image: "../images/house-8.jpg", statut: 'location', bed: 2, room: 2, location: 'Thiès', type: 'Appartement' },
+    { id: 9, name: "Très bel appartement", price: 550000, image: "../images/house-9.jpg", statut: 'location', bed: 5, room: 4, location: 'Tambacounda', type: 'Appartement' },
+    { id: 10, name: "Beau chambre à louer", price: 10000, image: "../images/house-10.jpg", statut: 'location', bed: 2, room: 1, location: 'Matam', type: 'Chambre' },
   ],
   cityproperties = [
     { id: 1, name: "Dakar", properties: 1, image: "../images/villes/dakar.jpg"},
@@ -49,8 +50,14 @@ export const GlobalProvider = ({ children }) => {
     {id: 7, name:'', link: '',image: '../images/partenaires/client-7.webp'},
     {id: 8, name:'', link: '',image: '../images/partenaires/client-8.webp'},
   ]
+    // Détermine la propriété qui a le prix minimal
+    const prices = [];
+    products.map((property, id)=>{
+      return prices[id] = property.price;
+    })
+    function formatNumber(number){return number.toLocaleString('fr-FR')}
   return (
-    <GlobalContext.Provider value={{ products, cityproperties, partenaires, propertiesType }}>
+    <GlobalContext.Provider value={{ products, cityproperties, partenaires, propertiesType, prices, formatNumber }}>
       {children}
     </GlobalContext.Provider>
   );

@@ -17,7 +17,8 @@ a{text-decoration: none;}
 input:focus{outline: none;}
 section .opaque{opacity: .7;}
 .btn{padding: 15px 30px;background: var(--color1);color: var(--color0);text-decoration: none;font-size: 14px;letter-spacing: 1px;transition: all .3s linear;border: 0;cursor: pointer;font-family: var(--font);position: relative;}
-a.searchBtn {background: var(--color3);color: var(--color0);font-weight: 100;letter-spacing: 2px;padding: 15px;font-size: 18px;transition: all .3s linear;}
+.searchBtn {background: var(--color3);color: var(--color0);font-weight: 100;letter-spacing: 2px;padding: 15px;font-size: 18px;transition: all .3s linear;border: 0;cursor: pointer;}
+.searchBtn:hover{opacity: .8;}
 .btn::before{content: "";position: absolute;width: 100%;height: 100%;border: 1px solid var(--color1);right: -10px;top: 7px;z-index: -1;}
 .btn:hover{background: var(--color2);}
 .btn:hover:before{border-color: #0000009f;}
@@ -65,17 +66,17 @@ section .title .subtitle{display: block;font-weight: 100;font-size: 16px;letter-
 section .title::before{content: "";position: absolute;width: 150px;height: 15px;background: url(../public/images/title.svg);left: 50%;transform: translate(-50%);bottom: -25px;background-size: contain;background-repeat: no-repeat;background-position: center;}
 section .title.sans::before{display: none;}
 /* .featured{display: flex;flex-direction: column;gap: 4em;} */
-.featured .container .card{position: relative;height: 500px;overflow: hidden;border: 30px solid var(--color0);}
-.featured .container .card img{position: absolute;object-position: center;width: 100%;height: 100%;object-fit: cover;transition: transform .3s linear;}
-.featured .container .card:hover img{transform: scale(1.1);}
-.featured .container .card .statut{position: absolute;background: var(--color1);top: 0;z-index: 1;padding: 5px 15px 10px;font-size: 16px;color: var(--color0);font-weight: 500;letter-spacing: 1px;left: 0;}
-.featured .container .card .infos{position: absolute;padding: 20px;width: 100%;bottom: 0;display: flex;flex-direction: column;align-items: flex-start;font-size: 20px;color: var(--color0);letter-spacing: 1px;height: 100%;justify-content: flex-end;background: linear-gradient(0deg, rgba(0, 0, 0, 0.747), transparent, transparent);}
-.featured .container .card .infos .prix{font-size: 25px;font-weight: 900;}
-.featured .container .card .infos .titre{font-weight: 100;font-size: 20px;letter-spacing: 2px;}
-.featured .container .card .infos .location{font-size: 15px;font-weight: 500;letter-spacing: 2px;padding: 10px 0;}
-.featured .container .card .infos .caracteristiques{display: flex;font-size: 16px;font-weight: 100;opacity: .7;padding-top: 20px;flex-wrap: wrap;justify-content: space-between;width: 100%;}
-.featured .container .card .infos .caracteristiques span{display: flex;align-items: center;justify-content: center;}
-.featured .container .card .infos .caracteristiques span strong{display: flex;justify-content: flex-end;align-items: flex-end;padding-right: 10px;}
+.container .card{position: relative;height: 500px;overflow: hidden;border: 30px solid var(--color0);}
+.container .card img{position: absolute;object-position: center;width: 100%;height: 100%;object-fit: cover;transition: transform .3s linear;}
+.container .card:hover img{transform: scale(1.1);}
+.container .card .statut{position: absolute;background: var(--color1);top: 0;z-index: 1;padding: 5px 15px 10px;font-size: 16px;color: var(--color0);font-weight: 500;letter-spacing: 1px;left: 0;}
+.container .card .infos{position: absolute;padding: 20px;width: 100%;bottom: 0;display: flex;flex-direction: column;align-items: flex-start;font-size: 20px;color: var(--color0);letter-spacing: 1px;height: 100%;justify-content: flex-end;background: linear-gradient(0deg, rgba(0, 0, 0, 0.747), transparent, transparent);}
+.container .card .infos .prix{font-size: 25px;font-weight: 900;}
+.container .card .infos .titre{font-weight: 100;font-size: 20px;letter-spacing: 2px;}
+.container .card .infos .location{font-size: 15px;font-weight: 500;letter-spacing: 2px;padding: 10px 0;}
+.container .card .infos .caracteristiques{display: flex;font-size: 16px;font-weight: 100;opacity: .7;padding-top: 20px;flex-wrap: wrap;justify-content: space-between;width: 100%;}
+.container .card .infos .caracteristiques span{display: flex;align-items: center;justify-content: center;}
+.container .card .infos .caracteristiques span strong{display: flex;justify-content: flex-end;align-items: flex-end;padding-right: 10px;}
 /* section.advantages{background-image: url(../public/images/bg-3.jpg);background-size: cover;background-position: bottom;background-attachment: fixed;position: relative;height: 340px;} */
 /* section.advantages::before{content: "";position: absolute;inset: 0;background-color: #00000082;} */
 /* section.advantages .title{color: var(--color0);} */
@@ -161,12 +162,20 @@ footer section.bottom{display: flex;justify-content: space-between;align-items: 
 
 
 /* Page des propriétés */
-section.properties{display: grid;grid-template-columns: 350px 5fr;}
-section.properties .filter{display: flex;flex-direction: column;gap: 20px;}
+section.properties{display: grid;grid-template-columns: 350px 5fr;grid-gap: 40px;}
+section.properties .filter{display: flex;flex-direction: column;gap: 5px;}
 section.properties .filter > div{flex-direction: column;display: flex;gap: 10px;align-items: flex-start;text-align: left;background: var(--light);padding: 40px 20px;}
 section.properties .filter > div > span{color: var(--color3);font-size: 20px;letter-spacing: 1.2px;}
 section.properties .filter > div.Budget{display: block;}
 section.properties .filter > div ul{list-style: none;}
 section.properties .filter > div *{font-size: 16px;color: var(--color2);letter-spacing: 1px;}
 section.properties .filter > div label,section.properties .filter > div a{display: flex;line-height: 2;}
+section.properties .list-properties{display: flex;flex-direction: column;align-items: center;justify-content: flex-start;gap: 30px;}
+section.properties .list-properties .container{display: grid;grid-template-columns: 1fr 1fr;grid-gap: 20px;width: 100%;}
+section.properties .list-properties .container a.card{height: 350px;border: 0;}
+section.properties .list-properties .container a.card img{left: 0%;}
+section.properties .filter > div .minmax{display: flex;justify-content: space-between;}
+section.properties .filter > div .minmax span{font-size: 13px;opacity: .7;}
+section.properties .filter > div .myBudget{padding-top: 20px;font-size: 15px;}
+span.searchResult {font-size: 15px;letter-spacing: 1px;}
 /* Page des propriétés */
