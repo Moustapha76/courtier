@@ -9,6 +9,7 @@ import Actualites from './pages/Actualites';
 import Contact from './pages/Contact';
 import { useEffect, useState } from "react";
 import { UserOutlined } from '@ant-design/icons';
+import Resultat from "./pages/Resultat";
 
 export default function App() {
   const [scrollY, setScrollY] = useState(0);
@@ -53,6 +54,9 @@ export default function App() {
                 <li>
                   <NavLink to="/contact">Contact</NavLink>
                 </li>
+                <li>
+                  <NavLink to="/resultat">Search</NavLink>
+                </li>
               </ul>
             </nav>
             <div className="btn-connexion">
@@ -68,6 +72,7 @@ export default function App() {
           <Route path="/proprietes" element={<Proprieties />} />
           <Route path="/actualites" element={<Actualites />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/resultat" element={<Resultat />} />
         </Routes>
       </Router>
     </div>

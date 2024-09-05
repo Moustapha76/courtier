@@ -72,7 +72,7 @@ section .title.sans::before{display: none;}
 .container .card .statut{position: absolute;background: var(--color1);top: 0;z-index: 1;padding: 5px 15px 10px;font-size: 16px;color: var(--color0);font-weight: 500;letter-spacing: 1px;left: 0;}
 .container .card .infos{position: absolute;padding: 20px;width: 100%;bottom: 0;display: flex;flex-direction: column;align-items: flex-start;font-size: 20px;color: var(--color0);letter-spacing: 1px;height: 100%;justify-content: flex-end;background: linear-gradient(0deg, rgba(0, 0, 0, 0.747), transparent, transparent);}
 .container .card .infos .prix{font-size: 25px;font-weight: 900;}
-.container .card .infos .titre{font-weight: 100;font-size: 20px;letter-spacing: 2px;}
+.container .card .infos .titre{font-weight: 100;font-size: 20px;letter-spacing: 2px;text-align: left;}
 .container .card .infos .location{font-size: 15px;font-weight: 500;letter-spacing: 2px;padding: 10px 0;}
 .container .card .infos .caracteristiques{display: flex;font-size: 16px;font-weight: 100;opacity: .7;padding-top: 20px;flex-wrap: wrap;justify-content: space-between;width: 100%;}
 .container .card .infos .caracteristiques span{display: flex;align-items: center;justify-content: center;}
@@ -81,8 +81,8 @@ section .title.sans::before{display: none;}
 /* section.advantages::before{content: "";position: absolute;inset: 0;background-color: #00000082;} */
 /* section.advantages .title{color: var(--color0);} */
 /* section.advantages .title::before{filter: invert(1);} */
-section.advantages .container{display: flex;justify-content: center;align-items: center;gap: 0px;position: relative;background: var(--color0);border-radius: 15px;}
-section.advantages .container .item{display: flex;flex-direction: column;align-items: center;justify-content: flex-start;padding: 40px;width: 20%;gap: 10px;}
+section.advantages .container{display: flex;justify-content: space-evenly;align-items: center;gap: 0px;position: relative;background: var(--color0);border-radius: 15px;}
+section.advantages .container .item{display: flex;flex-direction: column;align-items: center;justify-content: flex-start;padding: 40px;width: 25%;gap: 10px;}
 section.advantages .container .item span{display: block;margin: 5px;letter-spacing: 1px;font-size: 16px;}
 section.advantages .container .item p{font-weight: 100;font-size: 14px;letter-spacing: 1px}
 section.advantages .container .item span.icone{background: var(--light);transition: all .3s linear;padding: 20px;width: 80px;height: 80px;border-radius: 50%;display: flex;justify-content: center;align-items: center;}
@@ -144,9 +144,11 @@ footer section.foot{display: grid;grid-template-columns: repeat(4, 1fr);backgrou
 footer section img{width: 200px;}
 footer section.foot .bloc{display: flex;flex-direction: column;text-align: left;color: var(--color2);font-size: 14px;letter-spacing: 1px;}
 footer section.foot .bloc form{display: flex;flex-direction: column;gap: 10px;}
+footer section.foot .bloc form .input-group{display: flex;flex-wrap: nowrap;}
 footer section.foot .bloc form input{padding: 10px;background: var(--color2);border: 0;color: var(--color0);font-family: var(--font);font-size: 16px;font-size: 14px;letter-spacing: 1px;}
 footer section.foot .bloc form label{font-size: 15px;letter-spacing: 1.5px;font-weight: 100;opacity: .7;}
-footer section.foot .bloc form input[type='submit']{background: var(--color1);padding: 10px 15px;}
+footer section.foot .bloc form input[type='submit']{background: var(--color1);padding: 10px 15px;cursor: pointer;transition: all .3s linear;}
+footer section.foot .bloc form input[type='submit']:hover{background: var(--color3);}
 footer section.foot .bloc:nth-child(1){gap: 10px;}
 footer section.foot .bloc:nth-child(1) span{display: flex;gap: 10px;align-items: center;}
 footer section.foot .bloc:nth-child(1) ul.rs{display: flex;flex-direction: row;gap: 20px;padding: 20px 0;}
