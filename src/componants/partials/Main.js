@@ -9,6 +9,7 @@ import MeetingRoomIcon from '@mui/icons-material/MeetingRoom';
 import HomeWorkIcon from '@mui/icons-material/HomeWork';
 import ChairIcon from '@mui/icons-material/Chair';
 import AOS from 'aos';
+import { Image } from 'antd';
 
   export default function Main(){
     const { products, cityproperties, partenaires } = useContext(GlobalContext);
@@ -31,8 +32,15 @@ import AOS from 'aos';
                     <button className='btn'>Lire plus</button>
                 </div>
                 <div className='bloc-right' data-aos="fade-up" >
-                    <img src="../images/about-banner-1.jpg" alt="Maison de luxe" />
-                    <img src="../images/house-3.jpg" alt="Maison de luxe" />
+                    <Image.PreviewGroup
+                        preview={{
+                        onChange: (current, prev) => console.log(`current index: ${current}, prev index: ${prev}`),
+                        }} >
+                        <Image src={`/${products[3].image}`} alt="Maison de luxe" />
+                        <Image src={`/${products[4].image}`} alt="Maison de luxe" />
+                    </Image.PreviewGroup>
+                    {/* <img src="../images/about-banner-1.jpg" alt="Maison de luxe" />
+                    <img src="../images/house-3.jpg" alt="Maison de luxe" /> */}
                 </div>
             </section>
             <section className='advantages'>

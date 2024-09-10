@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Route, Routes, NavLink } from "react-router-do
 import Home from './pages/Home';
 import About from './pages/About';
 import Proprieties from './pages/Properties';
+import Property from './pages/Property';
 import Actualites from './pages/Actualites';
 import Contact from './pages/Contact';
 import { useEffect, useState } from "react";
@@ -73,6 +74,8 @@ export default function App() {
           <Route path="/actualites" element={<Actualites />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/resultat" element={<Resultat />} />
+          <Route path="/proprietes/details/:id" element={<Property />} />
+          <Route path="/proprietes/details/" element={<Property />} />
         </Routes>
       </Router>
     </div>

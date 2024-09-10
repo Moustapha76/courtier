@@ -29,7 +29,7 @@ export default function Footer(){
                         <li><a href="/"><LinkedInIcon/></a></li>
                    </ul>
                    <form>
-                        <label>Je m'inscris à la Newsletter</label>
+                        <label>Newsletter</label>
                         <div className='input-group'>
                             <input type="text" placeholder='Entrer votre email'/>
                             <input type="submit" value='ok'/>

@@ -10,7 +10,7 @@ export default function About() {
   return(
       <div className="homepage">
           <Header page={pageName} title={pageTitle} subtitle={pageSubTitle}/>
-          <Main/>
+          <Main />
           <Footer/>
       </div>
   );

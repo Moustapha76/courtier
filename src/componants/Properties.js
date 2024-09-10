@@ -82,7 +82,7 @@ export default function Properties(){
                 <div className='container'>
                         {FilteredProperties.map((property, key)=>{
                             return(
-                                <a href='/' className='card' id={key}>
+                                <a href={`/proprietes/details/${property.id}`} className='card' id={key}>
                                     <span className='statut'>{property.statut}</span>
                                     <img src={property.image} alt={property.name} />
                                     <div className='infos'>

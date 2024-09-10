@@ -4,7 +4,7 @@ import { useEffect } from "react";
 import Properties from '../componants/Properties';
 
 export default function Collection(){
-    const pageName = 'home', pageTitle = 'Sama Courtier', pageSubTitle = 'Plateforme N°1 des immobiliers';
+    const pageName = 'properties', pageTitle = 'Nos propriétés', pageSubTitle = 'Appartements, maisons, studios, chambres,...';
     useEffect(()=>{
     },[]);
     return(

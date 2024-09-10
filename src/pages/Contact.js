@@ -1,5 +1,5 @@
 import Header from '../componants/partials/Header';
-import Main from '../componants/partials/Main';
+import ContactForm from '../componants/ContactForm';
 import Footer from '../componants/partials/Footer';
 import { useEffect } from "react";
 
@@ -10,7 +10,7 @@ export default function Contact() {
   return(
       <div className="homepage">
           <Header page={pageName} title={pageTitle} subtitle={pageSubTitle}/>
-          <Main/>
+          <ContactForm/>
           <Footer/>
       </div>
   );
