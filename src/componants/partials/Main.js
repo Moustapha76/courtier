@@ -10,6 +10,11 @@ import HomeWorkIcon from '@mui/icons-material/HomeWork';
 import ChairIcon from '@mui/icons-material/Chair';
 import AOS from 'aos';
 import { Image } from 'antd';
+// Import Swiper React components
+import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
+import { Swiper, SwiperSlide } from 'swiper/react';
+// Import Swiper styles
+import 'swiper/css';
 
   export default function Main(){
     const { products, cityproperties, partenaires } = useContext(GlobalContext);
@@ -26,10 +31,10 @@ import { Image } from 'antd';
                     <h2 className='title sans'>Sen Courtier<span className="subtitle">Qui sommes-nous ?</span></h2>
                     <div className='container'>
                         <p>Sen courtier est une plateforme digitale innovante dédiée à la mise en relation des clients avec des professionnels de l'immobilier à travers tout le Sénégal. Que vous soyez à la recherche de votre future résidence, d'un bien commercial, ou d'un investissement rentable, Sen courtier simplifie votre quête en vous connectant directement avec les meilleures offres disponibles sur le marché.</p>
-                        {/* <p>Grâce à une interface conviviale et des outils de recherche avancés, notre plateforme vous permet de parcourir une large sélection de propriétés soigneusement sélectionnées pour répondre à vos besoins. De plus, Sen courtier vous accompagne à chaque étape, en vous fournissant des conseils personnalisés et un service client réactif pour garantir une expérience fluide et sécurisée.</p> */}
-                        {/* <p>Avec Sen courtier, l'immobilier au Sénégal devient plus accessible, plus transparent, et surtout, plus efficace. Faites confiance à notre expertise pour trouver le bien qui correspond parfaitement à vos attentes.</p> */}
+                        <p>Grâce à une interface conviviale et des outils de recherche avancés, notre plateforme vous permet de parcourir une large sélection de propriétés soigneusement sélectionnées pour répondre à vos besoins. De plus, Sen courtier vous accompagne à chaque étape, en vous fournissant des conseils personnalisés et un service client réactif pour garantir une expérience fluide et sécurisée.</p>
+                        <p>Avec Sen courtier, l'immobilier au Sénégal devient plus accessible, plus transparent, et surtout, plus efficace. Faites confiance à notre expertise pour trouver le bien qui correspond parfaitement à vos attentes.</p>
                     </div>
-                    <button className='btn'>Lire plus</button>
+                    {/* <button className='btn'>Lire plus</button> */}
                 </div>
                 <div className='bloc-right' data-aos="fade-up" >
                     <Image.PreviewGroup
@@ -163,11 +168,13 @@ import { Image } from 'antd';
             <section className='partenaires' data-aos="fade-up" >
                 <h2 className='title'>Nos partenaires<span className="subtitle">Nous travaillons uniquement avec les meilleures entreprises.</span></h2>
                 <div className='container'>
+                <Swiper pagination={true} modules={[Pagination, Navigation, Scrollbar, A11y]} className="mySwiper">
                     {partenaires.map((partenaire, key)=>{
                         return(
-                            <a href={partenaire.link} id={key} className='logo-item'><img src={partenaire.image} alt={partenaire.name}/></a>
+                           <SwiperSlide><a href={partenaire.link} id={key} className='logo-item'><img src={partenaire.image} alt={partenaire.name}/></a></SwiperSlide>
                         );
                     })}
+                </Swiper>
                 </div>
             </section>
             {/* <section className='map'>

@@ -3,7 +3,6 @@ import logo1 from './logow.svg';
 import logo2 from './logo.svg';
 import { BrowserRouter as Router, Route, Routes, NavLink } from "react-router-dom";
 import Home from './pages/Home';
-import About from './pages/About';
 import Proprieties from './pages/Properties';
 import Property from './pages/Property';
 import Actualites from './pages/Actualites';
@@ -43,9 +42,9 @@ export default function App() {
                 <li>
                   <NavLink to="/">Accueil</NavLink>
                 </li>
-                <li>
+                {/* <li>
                   <NavLink to="/qui-sommes-nous">Qui sommes-nous ?</NavLink>
-                </li>
+                </li> */}
                 <li>
                   <NavLink to="/proprietes">Propriétés</NavLink>
                 </li>
@@ -69,7 +68,7 @@ export default function App() {
         </div>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/qui-sommes-nous" element={<About />} />
+          {/* <Route path="/qui-sommes-nous" element={<About />} /> */}
           <Route path="/proprietes" element={<Proprieties />} />
           <Route path="/actualites" element={<Actualites />} />
           <Route path="/contact" element={<Contact />} />

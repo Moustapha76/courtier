@@ -50,6 +50,19 @@ export const GlobalProvider = ({ children }) => {
     {id: 7, name:'', link: '',image: '../images/partenaires/client-7.webp'},
     {id: 8, name:'', link: '',image: '../images/partenaires/client-8.webp'},
   ]
+  const newsData = [
+    { id: 1, title: 'Actualité 1', content: 'Contenu de l’actualité 1', image: '../images/house-1.jpg', pub : '14/09/20024' },
+    { id: 2, title: 'Actualité 2', content: 'Contenu de l’actualité 2', image: '../images/house-2.jpg', pub : '14/09/20024' },
+    { id: 3, title: 'Actualité 3', content: 'Contenu de l’actualité 3', image: '../images/house-3.jpg', pub : '14/09/20024' },
+    { id: 4, title: 'Actualité 4', content: 'Contenu de l’actualité 4', image: '../images/house-4.jpg', pub : '14/09/20024' },
+    { id: 5, title: 'Actualité 5', content: 'Contenu de l’actualité 5', image: '../images/house-5.jpg', pub : '14/09/20024' },
+    { id: 6, title: 'Actualité 6', content: 'Contenu de l’actualité 6', image: '../images/house-6.jpg', pub : '14/09/20024' },
+    { id: 7, title: 'Actualité 7', content: 'Contenu de l’actualité 7', image: '../images/house-7.jpg', pub : '14/09/20024' },
+    { id: 8, title: 'Actualité 8', content: 'Contenu de l’actualité 8', image: '../images/house-8.jpg', pub : '14/09/20024' },
+    { id: 9, title: 'Actualité 9', content: 'Contenu de l’actualité 9', image: '../images/house-9.jpg', pub : '14/09/20024' },
+    { id: 10, title: 'Actualité 10', content: 'Contenu de l’actualité 10', image: '../images/house-10.jpg', pub : '14/09/20024' },
+    // Ajoutez autant d'actualités que nécessaire
+  ];
     // Détermine la propriété qui a le prix minimal
     const prices = [];
     products.map((property, id)=>{
@@ -57,7 +70,7 @@ export const GlobalProvider = ({ children }) => {
     })
     function formatNumber(number){return number.toLocaleString('fr-FR')}
   return (
-    <GlobalContext.Provider value={{ products, cityproperties, partenaires, propertiesType, prices, formatNumber }}>
+    <GlobalContext.Provider value={{ products, cityproperties, partenaires, propertiesType, prices, formatNumber, newsData }}>
       {children}
     </GlobalContext.Provider>
   );

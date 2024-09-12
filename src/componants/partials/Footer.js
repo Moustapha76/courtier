@@ -40,7 +40,7 @@ export default function Footer(){
                     <h6>Plan d'accès</h6>
                     <ul>
                         <li><a href="/">Accueil</a></li>
-                        <li><a href="/">Qui sommes-nous ?</a></li>
+                        {/* <li><a href="/">Qui sommes-nous ?</a></li> */}
                         <li><a href="/">Propriétés</a></li>
                         <li><a href="/">Actualités</a></li>
                         <li><a href="/">Contact</a></li>

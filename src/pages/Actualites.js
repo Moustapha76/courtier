@@ -1,5 +1,5 @@
 import Header from '../componants/partials/Header';
-import Main from '../componants/partials/Main';
+import Blog from '../componants/Blog.js';
 import Footer from '../componants/partials/Footer';
 import { useEffect } from "react";
 
@@ -10,7 +10,7 @@ export default function Actualites() {
   return(
       <div className="homepage">
           <Header page={pageName} title={pageTitle} subtitle={pageSubTitle}/>
-          <Main/>
+          <Blog/>
           <Footer/>
       </div>
   );
