@@ -7,11 +7,20 @@ import Proprieties from './pages/Properties';
 import Property from './pages/Property';
 import Actualites from './pages/Actualites';
 import Contact from './pages/Contact';
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { UserOutlined } from '@ant-design/icons';
 import Resultat from "./pages/Resultat";
+import Article from "./pages/ArticleItem";
+import { Switch } from 'antd';
+import WbSunnyIcon from '@mui/icons-material/WbSunny';
 
 export default function App() {
+  const myApp = useRef(null);
+  const [lightMode, setLightMode] = useState(true);
+  const changeTheme = (checked) => {
+    setLightMode(checked);
+    myApp.current.classList.toggle('darkmode');
+  };
   const [scrollY, setScrollY] = useState(0);
   const handleScroll = () => {
     setScrollY(window.scrollY);
@@ -24,7 +33,7 @@ export default function App() {
     };
   },[])
   return (
-    <div className="App">
+    <div className='App' ref={myApp}>
       <Router>
         <div className={`navbar${scrollY>0 ? ' fixed' : ''}`}>
           {/* <section className="top">
@@ -64,6 +73,10 @@ export default function App() {
               <a href="/login">Se connecter</a><i>|</i>
               <a href="/signin">S'inscrire</a>
             </div>
+            <div className="themeMode">
+            <Switch onChange={changeTheme} />
+            <WbSunnyIcon/>
+            </div>
           </navbar>
         </div>
         <Routes>
@@ -71,6 +84,7 @@ export default function App() {
           {/* <Route path="/qui-sommes-nous" element={<About />} /> */}
           <Route path="/proprietes" element={<Proprieties />} />
           <Route path="/actualites" element={<Actualites />} />
+          <Route path="/actualites/:id" element={<Article />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/resultat" element={<Resultat />} />
           <Route path="/proprietes/details/:id" element={<Property />} />

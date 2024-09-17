@@ -8,7 +8,7 @@ export default function Contact() {
   useEffect(()=>{
   },[]);
   return(
-      <div className="homepage">
+      <div className="contact">
           <Header page={pageName} title={pageTitle} subtitle={pageSubTitle}/>
           <ContactForm/>
           <Footer/>

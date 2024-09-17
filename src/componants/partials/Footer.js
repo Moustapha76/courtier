@@ -28,7 +28,7 @@ export default function Footer(){
                         <li><a href="/"><YouTubeIcon/></a></li>
                         <li><a href="/"><LinkedInIcon/></a></li>
                    </ul>
-                   <form>
+                   <form className="newsletter-form">
                         <label>Newsletter</label>
                         <div className='input-group'>
                             <input type="text" placeholder='Entrer votre email'/>

@@ -139,7 +139,7 @@ export default function Properties(){
                 {FilteredProperties.length >= 1 && 
                 <div className='pagination-row'>
                     <CustomTablePagination
-                        rowsPerPageOptions={[4, 8, 10, { label: 'All', value: -1 }]}
+                        rowsPerPageOptions={[4, 8, 10, { label: 'Tout', value: -1 }]}
                         colSpan={3}
                         count={FilteredProperties.length}
                         rowsPerPage={rowsPerPage}
