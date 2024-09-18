@@ -1,8 +1,31 @@
-import React, { createContext } from "react";
+import React, { createContext, useState, useEffect } from "react";
 // Créez un contexte
 export const GlobalContext = createContext();
 
 export const GlobalProvider = ({ children }) => {
+  const [lightMode, setLightMode] = useState(false);
+
+  function useWindowSize() {
+    const [windowSize, setWindowSize] = useState({
+      width: window.innerWidth,
+      height: window.innerHeight,
+    });
+  
+    useEffect(() => {
+      const handleResize = () => {
+        setWindowSize({
+          width: window.innerWidth,
+          height: window.innerHeight,
+        });
+      };
+  
+      window.addEventListener('resize', handleResize);
+      return () => window.removeEventListener('resize', handleResize);
+    }, []);
+  
+    return windowSize;
+  }
+
   const propertiesType = [
     { name:'Appartement' , value: 'Appartement' },
     { name: 'Chambre' , value: 'Chambre' },
@@ -142,7 +165,7 @@ export const GlobalProvider = ({ children }) => {
     topNews = (tab.filter(news=>news.rate === 'top'))
     function formatNumber(number){return number.toLocaleString('fr-FR')}
     return(
-    <GlobalContext.Provider value={{ products, cityproperties, partenaires, propertiesType, prices, formatNumber, newsData, topNews }}>
+    <GlobalContext.Provider value={{ products, cityproperties, partenaires, propertiesType, prices, formatNumber, newsData, topNews, setLightMode, lightMode, useWindowSize}}>
       {children}
     </GlobalContext.Provider>
   );

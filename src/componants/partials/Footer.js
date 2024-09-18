@@ -1,11 +1,15 @@
-import logo from '../../logo.svg';
+import logo1 from '../../logo.svg';
+import logo2 from '../../logow.svg';
 import PhoneIcon from '@mui/icons-material/Phone';
 import FmdGoodIcon from '@mui/icons-material/FmdGood';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import YouTubeIcon from '@mui/icons-material/YouTube';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import { useContext } from 'react';
+import { GlobalContext } from './GlobalContext';
 export default function Footer(){
+    const { lightMode } = useContext(GlobalContext);
     return(
         <footer>
             <section className="newsletter">
@@ -70,7 +74,7 @@ export default function Footer(){
             <section className='signature'>
             <hr/>
                 <div className='bloc'>
-                    <img src={logo} alt="logo du site" />
+                    <img src={lightMode ? logo2 : logo1} alt="logo du site" />
                     <span className='opaque'>Plateforme N°1 des courtiers du Sénégal.</span>
                 </div>
             </section>

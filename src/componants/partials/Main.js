@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from 'react';
+import { useContext, useEffect } from 'react';
 import { GlobalContext } from "./GlobalContext";
 import { Carousel } from 'antd';
 import { CalendarOutlined } from '@ant-design/icons';
@@ -11,13 +11,13 @@ import ChairIcon from '@mui/icons-material/Chair';
 import AOS from 'aos';
 import { Image } from 'antd';
 // Import Swiper React components
-import { Navigation, Pagination, Scrollbar, A11y, Controller } from 'swiper/modules';
-import { Swiper, SwiperSlide } from 'swiper/react';
+// import { Navigation, Pagination, Scrollbar, A11y, Controller } from 'swiper/modules';
+// import { Swiper, SwiperSlide } from 'swiper/react';
 // Import Swiper styles
 import 'swiper/css';
 
   export default function Main(){
-    const [controlledSwiper, setControlledSwiper] = useState(null);
+    // const [controlledSwiper, setControlledSwiper] = useState(null);
     const { products, cityproperties, partenaires } = useContext(GlobalContext);
     useEffect(() => {
         AOS.init({
@@ -169,13 +169,15 @@ import 'swiper/css';
             <section className='partenaires' data-aos="fade-up" >
                 <h2 className='title'>Nos partenaires<span className="subtitle">Nous travaillons uniquement avec les meilleures entreprises.</span></h2>
                 <div className='container'>
-                <Swiper onSwiper={setControlledSwiper} autoplay={{delay: 1000}} modules={[Pagination, Navigation, Scrollbar, A11y, Controller]} slidesPerView={5}  navigation pagination={{ clickable: true }} spaceBetween={40} controller={{ control: controlledSwiper }} className="mySwiper">
+                {/* <Swiper onSwiper={setControlledSwiper} autoplay={{delay: 1000}} modules={[Pagination, Navigation, Scrollbar, A11y, Controller]} slidesPerView={5}  navigation pagination={{ clickable: true }} spaceBetween={40} controller={{ control: controlledSwiper }} className="mySwiper"> */}
                     {partenaires.map((partenaire, key)=>{
                         return(
-                           <SwiperSlide ><a href={partenaire.link} id={key} className='logo-item'><img src={partenaire.image} alt={partenaire.name}/></a></SwiperSlide>
+                        //    <SwiperSlide >
+                            <a href={partenaire.link} id={key} className='logo-item'><img src={partenaire.image} alt={partenaire.name}/></a>
+                            // {/* </SwiperSlide> */}
                         );
                     })}
-                </Swiper>
+                {/* </Swiper> */}
                 </div>
             </section>
         </main>

@@ -7,16 +7,17 @@ import Proprieties from './pages/Properties';
 import Property from './pages/Property';
 import Actualites from './pages/Actualites';
 import Contact from './pages/Contact';
-import { useEffect, useState, useRef } from "react";
-import { UserOutlined } from '@ant-design/icons';
+import { useEffect, useState, useRef, useContext } from "react";
+// import { UserOutlined } from '@ant-design/icons';
 import Resultat from "./pages/Resultat";
 import Article from "./pages/ArticleItem";
 import { Switch } from 'antd';
 import WbSunnyIcon from '@mui/icons-material/WbSunny';
+import { GlobalContext } from "./componants/partials/GlobalContext";
 
 export default function App() {
   const myApp = useRef(null);
-  const [lightMode, setLightMode] = useState(true);
+  const { lightMode, setLightMode } = useContext(GlobalContext);
   const changeTheme = (checked) => {
     setLightMode(checked);
     myApp.current.classList.toggle('darkmode');
@@ -36,16 +37,8 @@ export default function App() {
     <div className='App' ref={myApp}>
       <Router>
         <div className={`navbar${scrollY>0 ? ' fixed' : ''}`}>
-          {/* <section className="top">
-            <form className="search"><input type="text" placeholder="Entrer un mot clès" /><button><SearchOutlined /></button></form>
-            <div className="btn-connexion">
-              <UserOutlined />
-              <a href="/login">Se connecter</a><i>|</i>
-              <a href="/signin">S'inscrire</a>
-            </div>
-          </section> */}
           <navbar>
-            <a href="/"><img src={scrollY>0 ? logo2 : logo1} alt="logo" className="logo"/></a>
+            <a href="/"><img src={scrollY>0 && !lightMode ? logo2 : logo1} alt="logo" className="logo"/></a>
             <nav>
               <ul>
                 <li>
@@ -68,11 +61,11 @@ export default function App() {
                 </li>
               </ul>
             </nav>
-            <div className="btn-connexion">
+            {/* <div className="btn-connexion">
               <UserOutlined />
               <a href="/login">Se connecter</a><i>|</i>
               <a href="/signin">S'inscrire</a>
-            </div>
+            </div> */}
             <div className="themeMode">
             <Switch onChange={changeTheme} />
             <WbSunnyIcon/>
